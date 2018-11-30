@@ -6,8 +6,14 @@ import java.util.ArrayList;
 
 public class ListaCreadaCero {
 
-    public ArrayList<Personaje> creaPersonajesHeroes(ArrayList<Personaje> lista){
-        //lista.add(new Personaje("Heimdall"));
+    public ArrayList<Personaje> creaPersonajesHeroes(){
+        ArrayList<Personaje> lista = new ArrayList<>();
+        String[] peliculas;
+
+        lista.add(new Personaje("Heimdall","Él es el centinela guardián que todo lo ve y escucha todo de Asgard " +
+                "que se encuentra en el puente arco iris Bifröst para vigilar cualquier ataque a Asgard. En parte, ganó el papel " +
+                "usando su vista para ver un ejército de gigantes a varios días de marcha de Asgard, lo que les permitió ser " +
+                "derrotados antes de llegar a Asgard y hacer prisionero a su rey.", peliculas = new String[]{"Thor"},""));
         //lista.add(new Personaje("Volstagg"));
         //lista.add(new Personaje("Hogun"));
         //lista.add(new Personaje("Fandral"));
@@ -39,7 +45,8 @@ public class ListaCreadaCero {
         return lista;
     }
 
-    public ArrayList<Personaje> creaPersonajesVillanos(ArrayList<Personaje> lista){
+    public ArrayList<Personaje> creaPersonajesVillanos(){
+        ArrayList<Personaje> lista = new ArrayList<>();
         //lista.add(new Personaje("Laufey"));
         //lista.add(new Personaje("Destroyer"));
         //lista.add(new Personaje("Erik Selvig"));
