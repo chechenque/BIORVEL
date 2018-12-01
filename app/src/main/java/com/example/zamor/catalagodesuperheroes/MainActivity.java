@@ -73,13 +73,13 @@ public class MainActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+    private TabLayout tabLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d(TAG,"onCreate: Starting");
-        mSectionsPagerAdapter = new FragmentAdapter(getSupportFragmentManager());
 
         mViewPager = (ViewPager) findViewById(R.id.container);
         //TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
@@ -130,29 +130,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-        mSectionsPagerAdapter = new FragmentAdapter(getSupportFragmentManager());
 
-        // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        if(toolbar != null ){
+            setSupportActionBar(toolbar);
+        }
 
+        setupViewPager(mViewPager);
     }
 
 
@@ -179,10 +167,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager){
-        FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager());
-        adapter.addFragment(new HeroesView(), "Heroes");
-        adapter.addFragment(new VillanosView(), "Villanos");
+
+        FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(), agregaFragments());
         viewPager.setAdapter(adapter);
+
+        tabLayout.getTabAt(0).setText("Heroes");
+        tabLayout.getTabAt(1).setText("Villanos");
+
+
+    }
+
+    private ArrayList<Fragment> agregaFragments(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+
+        fragments.add(new HeroesFragment());
+        fragments.add(new VillanosFragment());
+        return  fragments;
     }
 
     /**

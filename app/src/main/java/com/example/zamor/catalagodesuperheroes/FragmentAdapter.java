@@ -11,34 +11,19 @@ import java.util.List;
 
 public class FragmentAdapter extends FragmentStatePagerAdapter{
 
-    private final List<Fragment> listaFragments = new ArrayList<>();
-    private final  List<String> listaNombres = new ArrayList<>();
-
-
-    FragmentAdapter(FragmentManager fm) {
+    ArrayList<Fragment> fragments;
+    public FragmentAdapter(FragmentManager fm, ArrayList<Fragment> fragments) {
         super(fm);
+        this.fragments=fragments;
     }
-
 
     @Override
     public Fragment getItem(int position) {
-        return listaFragments.get(position);
+        return fragments.get(position);
     }
 
     @Override
     public int getCount() {
-        return listaFragments.size();
-    }
-
-    public void addFragment(Fragment fragment, String title){
-        listaFragments.add(fragment);
-        listaNombres.add(title);
-    }
-
-
-    @Nullable
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return super.getPageTitle(position);
+        return fragments.size();
     }
 }
