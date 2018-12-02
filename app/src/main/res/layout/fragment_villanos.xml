@@ -6,9 +6,19 @@
     tools:context=".VillanosFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/prueba1"
+            android:layout_width="131dp"
+            android:layout_height="126dp" />
+
+        <TextView
+            android:id="@+id/tvJson1"
+            android:layout_width="305dp"
+            android:layout_height="104dp" />
+    </LinearLayout>
 
 </FrameLayout>

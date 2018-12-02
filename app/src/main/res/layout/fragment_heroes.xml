@@ -3,12 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HeroesFragment">
+    tools:context=".HeroesFragment"
+    android:id="@+id/fragmentHeroes">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
+    <!--<ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/imagenPrueba"
+        android:background="@color/colorAccent"/>-->
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/prueba"
+            android:layout_width="131dp"
+            android:layout_height="126dp" />
+
+        <TextView
+            android:id="@+id/tvJson"
+            android:layout_width="305dp"
+            android:layout_height="104dp" />
+    </LinearLayout>-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </FrameLayout>

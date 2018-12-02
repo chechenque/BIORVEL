@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class ListaDescripcion {
 
-    public ArrayList<String> rellenaNombresHeroes(ArrayList<String> lista){
+    public ArrayList<String> rellenaNombresHeroes(){
+        ArrayList<String> lista = new ArrayList<>();
         lista.add("Iron Man");
         lista.add("Hulk");
         lista.add("Thor");
@@ -15,7 +16,7 @@ public class ListaDescripcion {
         lista.add("Vision");
         lista.add("Spider-Man");
         lista.add("Wong");
-        lista.add("Waspa");
+        lista.add("Wasp");
         return lista;
     }
 

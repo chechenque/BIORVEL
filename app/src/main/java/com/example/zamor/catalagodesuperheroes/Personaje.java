@@ -3,10 +3,10 @@ package com.example.zamor.catalagodesuperheroes;
 public class Personaje {
     private String name;
     private String description;
-    private String[] peliculas;
+    private String peliculas;
     private String imagen;
 
-    public Personaje(String name, String description, String[] peliculas, String imagen) {
+    public Personaje(String name, String description, String peliculas, String imagen) {
         this.name = name;
         this.description = description;
         this.peliculas = peliculas;
@@ -29,11 +29,11 @@ public class Personaje {
         this.description = description;
     }
 
-    public String[] getPeliculas() {
+    public String getPeliculas() {
         return peliculas;
     }
 
-    public void setPeliculas(String[] peliculas) {
+    public void setPeliculas(String peliculas) {
         this.peliculas = peliculas;
     }
 
